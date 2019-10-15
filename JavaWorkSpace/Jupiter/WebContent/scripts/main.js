@@ -5,8 +5,8 @@
      */
     var user_id = '0001';
     var user_fullname = 'Donald Shen';
-    var lng = -122.08;
-    var lat = 37.38;
+    var lng = -71.07;
+    var lat = 42.35;
 
     /**
      * Initialize

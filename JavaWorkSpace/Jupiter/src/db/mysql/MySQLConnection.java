@@ -20,7 +20,7 @@ public class MySQLConnection implements DBConnection{
 
 	public MySQLConnection() { 
 		try {
-			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(MySQLDBUtil.URL); 
 		} 
 		catch (Exception e) {
@@ -183,19 +183,6 @@ public class MySQLConnection implements DBConnection{
 			System.err.println("DB connection failed!"); return;
 		}
 		try {
-			// SQL Injection
-			// Example:
-			// SELECT * FROM users WHERE username = '<username>' AND password = '<password>'
-			// version 1
-			// username: aoweifapweofj' OR 1=1 --
-			// password: joaiefjajfaow
-			// ->
-			// SELECT * FROM users WHERE username = 'aoweifapweofj' OR 1=1 --' AND password = 'joaiefjajfaow'
-			// version 2
-			// username: oiaejofijaw
-			// password: awjeofaiwjefowai' OR '1' = '1
-			// ->
-			// SELECT * FROM users WHERE username = 'oiaejofijaw' AND password = 'awjeofaiwjefowai' OR '1' = '1'
 			String sql = "INSERT IGNORE INTO items VALUES (?, ?, ?, ?, ?, ?, ?)"; 
 			PreparedStatement stmt = conn.prepareStatement(sql); 
 			stmt.setString(1, item.getItemId());

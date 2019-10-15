@@ -19,9 +19,9 @@ public class GeoRecommendation {
 		List<Item> recommendedItems = new ArrayList<>(); 
 		DBConnection conn = DBConnectionFactory.getConnection();
 		try {
-			// Step 1 Get all favorite items
+			// Get all favorite items
 			Set<String> favoriteItemIds = conn.getFavoriteItemIds(userId);
-			// Step 2 Get all categories of favorite items, sort by count 
+			// Get all categories of favorite items, sort by count 
 			Map<String, Integer> allCategories = new HashMap<>(); 
 			for (String itemId : favoriteItemIds) {
 				Set<String> categories = conn.getCategories(itemId); 
@@ -37,7 +37,7 @@ public class GeoRecommendation {
 					return Integer.compare(o2.getValue(), o1.getValue());
 				}
 			});
-			// Step 3 do search based on category, filter out favorite events, sort by distance 
+			// do search based on category, filter out favorite events, sort by distance 
 			Set<Item> visitedItems = new HashSet<>();
 			for (Entry<String, Integer> category : categoryList) {
 				List<Item> items = conn.searchItems(lat, lon, category.getKey()); 
