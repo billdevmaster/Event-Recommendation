@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+/Users/mingyuan/Documents/Project/JavaWorkSpace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-3395412502.index
-3257777287.index
-2260639984.index
-4140975902.index
-3681183616.index
-3026521838.index
