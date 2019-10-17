@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="Item Recommendation">
-<meta name="author" content="Your Name">
-<title>Item Recommendation</title>
+<meta name="author" content="Donald Shen">
+<title>MyRecommendation</title>
 <link
 	href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700'
 	rel='stylesheet' type='text/css'>
@@ -30,12 +30,29 @@
 
 		<section class="main-section">
 			<div id="login-form">
-				<label for="username">Username:</label> <input id="username"
-					name="username" type="text"> <label for="password">Password:</label>
+				<label for="username">Username:</label> 
+				<input id="username" name="username" type="text"> 
+				<label for="password">Password:</label>
 				<input id="password" name="password" type="password">
+				<button id="register-form-btn">New User? Register</button>
 				<button id="login-btn">Login</button>
 				<p id="login-error"></p>
 			</div>
+
+			<div id="register-form">
+				<label for="username">Username: *</label> 
+				<input id="register-username" name="username" type="text"> 
+				<label for="password">Password: *</label> 
+				<input id="register-password" name="password" type="password"> 
+				<label for="first-name">First Name: *</label> 
+				<input id="register-first-name" name="first-name" type="text"> 
+				<label for="last-name">Last Name: *</label> 
+				<input id="register-last-name" name="last-name" type="text">
+				<button id="login-form-btn">Back to Login</button>
+				<button id="register-btn">Register</button>
+				<p id="register-result"></p>
+			</div>
+
 			<aside id="item-nav">
 				<div class="nav-icon">
 					<i class="fa fa-sitemap fa-2x"></i>
@@ -56,31 +73,35 @@
 					src="https://s3-media3.fl.yelpcdn.com/bphoto/EmBj4qlyQaGd9Q4oXEhEeQ/ms.jpg" />
 					<div>
 						<a class="item-name" href="#">Item</a>
-						<p class="item-category">Sports</p>
+						<p class="item-category">Vegetarian</p>
 						<div class="stars">
 							<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
 								class="fa fa-star"></i>
 						</div>
 					</div>
-					<p class="item-address">
-						222 Berkeley Street<br />Boston<br /> MA
-					</p>
+						<p class="item-address">
+							222 Berkeley Street<br />
+							Boston<br /> 
+							MA
+						</p>
 					<div class="fav-link">
 						<i class="fa fa-heart"></i>
-					</div></li>
+					</div>
+				</li>
 			</ul>
 		</section>
 	</div>
 
 	<footer>
 		<p class="title">What We Do ?</p>
-		<p>"Help you find the best place around."</p><br/>
+		<p>"Help you find the best place around."</p>
+		<br />
 		<ul>
 			<li>
 				<p>
 					<i class="fa fa-map-o fa-2x"></i>
 				</p>
-				<p>WUSTL, MO</p>
+				<p>WashU, MO</p>
 			</li>
 			<li>
 				<p>
@@ -92,7 +113,7 @@
 				<p>
 					<i class="fa fa-phone fa-2x"></i>
 				</p>
-				<p>+1 234 567 8901</p>
+				<p>+1 314 123 456</p>
 			</li>
 		</ul>
 	</footer>

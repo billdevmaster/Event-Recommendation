@@ -1,5 +1,6 @@
 package db.mongodb;
 
+import java.sql.PreparedStatement;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -136,10 +137,16 @@ public class MongoDBConnection implements DBConnection {
 		FindIterable<Document> iterable = db.getCollection("items").find(eq("item_id", item.getItemId()));
 		if (iterable.first() == null) {
 			db.getCollection("items")
-					.insertOne(new Document().append("item_id", item.getItemId()).append("distance", item.getDistance())
-							.append("name", item.getName()).append("address", item.getAddress())
-							.append("url", item.getUrl()).append("image_url", item.getImageUrl())
-							.append("rating", item.getRating()).append("categories", item.getCategories()));
+					.insertOne(new Document()
+							.append("item_id", item.getItemId())
+							.append("distance", item.getDistance())
+							.append("name", item.getName())
+							.append("address", item.getAddress())
+							.append("url", item.getUrl())
+							.append("image_url", item.getImageUrl())
+							.append("rating", item.getRating())
+							.append("categories", item.getCategories())
+							);
 		}
 
 	}
@@ -172,4 +179,19 @@ public class MongoDBConnection implements DBConnection {
 		return false;
 	}
 
+	@Override
+	public boolean registerUser(String userId, String password, String firstname, String lastname) {
+		// TODO Auto-generated method stub
+		FindIterable<Document> iterable = db.getCollection("users").find(eq("user_id", userId));
+
+		if (iterable.first() == null) {
+			db.getCollection("users").insertOne(new Document()
+					.append("first_name", firstname)
+					.append("last_name", lastname)
+					.append("password", password)
+					.append("user_id", userId));
+			return true;
+		}
+		return false;
+	}
 }
