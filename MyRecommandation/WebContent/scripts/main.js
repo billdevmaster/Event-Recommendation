@@ -4,10 +4,8 @@
 	 * Variables of fake user
 	 */
 	/**
-	var user_id = '0001';
-	var user_fullname = 'Donald Shen';
-	var lng = -71.07;
-	var lat = 42.35;
+	 * var user_id = '0001'; var user_fullname = 'Donald Shen'; var lng =
+	 * -71.07; var lat = 42.35;
 	 */
 	/**
 	 * Initialize
@@ -19,51 +17,9 @@
 		$('fav-btn').addEventListener('click', loadFavoriteItems);
 		$('recommend-btn').addEventListener('click', loadRecommendedItems);
 		validateSession();
-		// onSessionValid({
-		// user_id : '1111',
-		// name : 'John Smith'
-		// });
+
 	}
-	/**
-	 * Session
-	 */
-	function validateSession() {
-		// The request parameters
-		var url = './login';
-		var req = JSON.stringify({});
-		// display loading message
-		showLoadingMessage('Validating session...');
-		// make AJAX call
-		ajax('GET', url, req,
-		// session is still valid
-		function(res) {
-			var result = JSON.parse(res);
-			if (result.status === 'OK') {
-				onSessionValid(result);
-			}
-		});
-	}
-	function onSessionValid(result) {
-		user_id = result.user_id;
-		user_fullname = result.name;
-		var loginForm = $('login-form');
-		var itemNav = $('item-nav');
-		var itemList = $('item-list');
-		var avatar = $('avatar');
-		var welcomeMsg = $('welcome-msg');
-		var logoutBtn = $('logout-link');
-		welcomeMsg.innerHTML = 'Welcome, ' + user_fullname;
-		showElement(itemNav);
-		showElement(itemList);
-		showElement(avatar);
-		showElement(welcomeMsg);
-		showElement(logoutBtn, 'inline-block');
-		hideElement(loginForm);
-		initGeoLocation();
-		// user_id : '1111',
-		// name : 'John Smith'
-		// });
-	}
+
 	/**
 	 * Session
 	 */
@@ -101,6 +57,7 @@
 		hideElement(loginForm);
 		initGeoLocation();
 	}
+
 	function onSessionInvalid() {
 		var loginForm = $('login-form');
 		var itemNav = $('item-nav');
