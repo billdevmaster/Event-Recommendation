@@ -4,7 +4,6 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.Connection;
 
-import java.sql.SQLException;
 
 public class MySQLTableCreation {
 	// Run this as Java application to reset db schema.

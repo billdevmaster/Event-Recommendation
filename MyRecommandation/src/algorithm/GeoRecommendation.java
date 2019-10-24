@@ -30,7 +30,7 @@ public class GeoRecommendation {
 				}
 			}
 			List<Entry<String, Integer>> categoryList = new ArrayList<>(allCategories.entrySet());
-			// override the comparator
+			// override the comparator, compare the frequency of the category
 			Collections.sort(categoryList, new Comparator<Entry<String, Integer>>() { 
 				@Override
 				public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) { 

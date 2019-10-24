@@ -48,14 +48,12 @@ public interface DBConnection {
 	* @param item */
 	public void saveItem(Item item);
 	/**
-	* Get full name of a user. (This is not needed for main course, just for demo
-	* and extension). *
+	* Get full name of a user. 
 	* @param userId
 	* @return full name of the user */
 	public String getFullname(String userId);
 	/**
-	* Return whether the credential is correct. (This is not needed for main
-	* course, just for demo and extension) *
+	* Return whether the credential is correct. 
 	* @param userId
 	* @param password
 	* @return boolean */
